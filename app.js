@@ -26,11 +26,12 @@ Ext.application({
     launch: function () {
       Ext.Ajax.request({  
         Headers: {
+            'Access-Control-Allow-Origin': 'http://112.74.77.178/StandardApiAction_login.action?account=bsa3004&password=000000',
             'accept-encoding': true,
             'Content-Type': 'text/html; charset=utf-8'
         },
         url: 'http://112.74.77.178/StandardApiAction_login.action?account=bsa3004&password=000000',                                         
-        method: 'POST',                                         
+        method: 'GET',                                         
         success: function(response, opts) {
           Ext.Msg.alert("Success", response.status + response.responseText);
         },                                           
