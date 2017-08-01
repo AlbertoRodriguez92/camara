@@ -28,10 +28,14 @@ Ext.application({
         Headers: {
             'Access-Control-Allow-Origin': 'http://112.74.77.178/StandardApiAction_login.action?account=bsa3004&password=000000',
             'accept-encoding': true,
+            'cache':false,
             'Content-Type': 'text/html; charset=utf-8'
         },
-        url: 'http://112.74.77.178/StandardApiAction_login.action?account=bsa3004&password=000000',                                         
-        method: 'GET',                                         
+        url: 'http://'+ window.location.host+'/StandardApiAction_login.action',                                         
+        method: 'POST',
+        params:[ 
+                {name: 'account', value: 'bsa3004'},{name: 'password', value: 000000}
+        ],
         success: function(response, opts) {
           Ext.Msg.alert("Success", response.status + response.responseText);
         },                                           
