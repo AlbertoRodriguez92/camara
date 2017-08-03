@@ -31,17 +31,17 @@ Ext.application({
             'cache':false,
             'Content-Type': 'text/html; charset=utf-8'
         },
-        url: 'http://'+ window.location.host+'/StandardApiAction_login.action',                                         
+        url: 'http://112.74.77.178/StandardApiAction_login.action?account=bsa3004&password=000000',                                         
         method: 'POST',
         params:[ 
                 {name: 'account', value: 'bsa3004'},{name: 'password', value: 000000}
         ],
         success: function(response, opts) {
-          Ext.Msg.alert("Success", response.status + response.responseText);
+          Ext.Msg.alert("Success", response.status + response.responseText.jsession);
         },                                           
         failure: function(response, opts) {                                              
-          Ext.Msg.alert("Failure", response.status + response.responseText);  
-            console.log(response.status);
+          Ext.Msg.alert("Failure", response.status + response.responseText.jsession);  
+            console.log();
         }                                        
       }); 
     }
